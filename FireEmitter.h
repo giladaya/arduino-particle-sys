@@ -11,15 +11,16 @@
 
 class FireEmitter : public Emitter
 {
-    public:
-        static byte baseHue;
-        static byte maxTtl;
-        unsigned int counter;
-        byte maxDim;
-        
-        FireEmitter(byte maxDim);
-        void emit(Particle * particle);
-    private:
+public:
+    static byte baseHue;
+    static byte maxTtl;
+    unsigned int counter;
+    boolean cycleHue;
+    byte maxDim;
+
+    FireEmitter(byte maxDim);
+    void emit(Particle *particle);
+private:
 };
 
 #endif /* fire_emitter_h */
