@@ -9,10 +9,9 @@
 #include "Arduino.h"
 #include "Particle.h"
 
-class Emitter
-{
-    public:
-        virtual void emit(Particle * particle);
+class Emitter {
+public:
+    virtual void emit(Particle * particle);
 };
 
 #endif /* emitter_h */

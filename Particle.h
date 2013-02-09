@@ -9,18 +9,17 @@
 
 #include "Arduino.h"
 
-class Particle
-{
-    public:
-        byte x;   //left
-        byte y;   //bottom
-        signed char vx;  //horizontal velocity
-        signed char vy;  //vertical velocity
-        byte ttl; //time to live
-        byte hue; //hue
-        boolean isAlive; //is alive?
-        
-        virtual void update(void);
+class Particle {
+public:
+    byte x;   //left
+    byte y;   //bottom
+    signed char vx;  //horizontal velocity
+    signed char vy;  //vertical velocity
+    byte ttl; //time to live
+    byte hue; //hue
+    boolean isAlive; //is alive?
+
+    virtual void update(void);
 };
 
 #endif /* particle_h */

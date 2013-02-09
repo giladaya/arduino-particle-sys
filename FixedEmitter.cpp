@@ -17,15 +17,15 @@ FixedEmitter::FixedEmitter(byte x, byte y, signed char vx, signed char vy, byte 
 
 void FixedEmitter::emit(Particle * particle)
 {
-   counter++;
-    
-   particle->vx = vx;
-   particle->vy = vy;
+    counter++;
 
-   particle->x = x;
-   particle->y = y;
-    
-   particle->ttl = ttl;
-   particle->hue = counter%250;
-   particle->isAlive = true;
+    particle->vx = vx;
+    particle->vy = vy;
+
+    particle->x = x;
+    particle->y = y;
+
+    particle->ttl = ttl;
+    particle->hue = counter%250;
+    particle->isAlive = true;
 }

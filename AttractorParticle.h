@@ -8,17 +8,16 @@
 
 #include "Particle.h"
 
-class AttractorParticle : public Particle
-{
-    public:
-        static byte maxDim;
-        static byte ax; //horizontal attractor position
-        static byte ay; //vertical attractor position
-        static signed char af; //attractor force
-        
-        AttractorParticle();
-        void update(void);
-    private:
+class AttractorParticle : public Particle {
+public:
+    static byte maxDim;
+    static byte ax; //horizontal attractor position
+    static byte ay; //vertical attractor position
+    static signed char af; //attractor force
+
+    AttractorParticle();
+    void update(void);
+private:
 };
 
 #endif /* attractor_particle_h */

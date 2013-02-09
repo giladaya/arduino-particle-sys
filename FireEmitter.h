@@ -9,8 +9,7 @@
 #include "Emitter.h"
 #include "Arduino.h"
 
-class FireEmitter : public Emitter
-{
+class FireEmitter : public Emitter {
 public:
     static byte baseHue;
     static byte maxTtl;

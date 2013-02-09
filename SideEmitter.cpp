@@ -17,32 +17,31 @@ SideEmitter::SideEmitter(char side, byte maxDim)
 
 void SideEmitter::emit(Particle * particle)
 {
-   counter++;
-   
-   switch(side)
-   {
-      case 't':
-          particle->x = random(maxDim);
-          particle->y = maxDim-32;
-          break;
-      case 'r':
-          particle->x = maxDim-32;
-          particle->y = random(maxDim);
-          break;
-      case 'b':
-          particle->x = random(maxDim);
-          particle->y = 1;
-          break;
-      case 'l':
-          particle->x = 1;
-          particle->y = random(maxDim);
-          break;
-   }
-    
-   particle->vx = 0;
-   particle->vy = 0;
-  
-   particle->ttl = random(1, maxTtl);
-   particle->hue = baseHue;
-   particle->isAlive = true;
+    counter++;
+
+    switch(side) {
+    case 't':
+        particle->x = random(maxDim);
+        particle->y = maxDim-32;
+        break;
+    case 'r':
+        particle->x = maxDim-32;
+        particle->y = random(maxDim);
+        break;
+    case 'b':
+        particle->x = random(maxDim);
+        particle->y = 1;
+        break;
+    case 'l':
+        particle->x = 1;
+        particle->y = random(maxDim);
+        break;
+    }
+
+    particle->vx = 0;
+    particle->vy = 0;
+
+    particle->ttl = random(1, maxTtl);
+    particle->hue = baseHue;
+    particle->isAlive = true;
 }

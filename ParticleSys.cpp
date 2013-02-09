@@ -13,9 +13,9 @@ ParticleSys::ParticleSys(byte num, Particle particles[], Emitter *emitter)
 
 void ParticleSys::update()
 {
-    for(int i = 0; i<num; i++){
+    for(int i = 0; i<num; i++) {
         particles[i].update();
-        if (!particles[i].isAlive){
+        if (!particles[i].isAlive) {
             emitter->emit(&particles[i]);
         }
     }

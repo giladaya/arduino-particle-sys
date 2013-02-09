@@ -20,13 +20,11 @@ void FireEmitter::emit(Particle *particle)
     counter++;
     if (cycleHue) baseHue = counter%240;
 
-    if (counter % 2 == 0)
-    {
+    if (counter % 2 == 0) {
         particle->x = random(maxDim >> 2, 3 * (maxDim >> 2));
-        switch (particle->x / 32)
-        {
+        switch (particle->x / 32) {
         case 0:
-        case 7: 
+        case 7:
             particle->ttl = random(1, 7);
             break;
         case 1:
@@ -43,14 +41,11 @@ void FireEmitter::emit(Particle *particle)
             break;
         }
         particle->hue = baseHue+16;
-    }
-    else
-    {
+    } else {
         particle->x = random(maxDim);
-        switch (particle->x / 32)
-        {
+        switch (particle->x / 32) {
         case 0:
-        case 7: 
+        case 7:
             particle->ttl = random(1, 20);
             break;
         case 1:
@@ -74,6 +69,6 @@ void FireEmitter::emit(Particle *particle)
     particle->vx = 0;
     particle->vy = 0;
 
-    
+
     particle->isAlive = true;
 }

@@ -24,7 +24,7 @@ void FountainEmitter::emit(Particle * particle)
     particle->y = source->y;
     particle->vx = vx + random(var)-_hVar;
     particle->vy = vy + random(var)-_hVar;
-    
+
     //particle->ttl = random(20,100);
     particle->ttl = counter%200+50;
     particle->hue = counter%255;

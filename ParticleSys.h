@@ -12,16 +12,15 @@
 
 //#include "Arduino.h"
 
-class ParticleSys
-{
-	public:
-		byte num;
-		Particle *particles;
-		Emitter *emitter;
+class ParticleSys {
+public:
+    byte num;
+    Particle *particles;
+    Emitter *emitter;
 
-		ParticleSys(byte num, Particle particles[], Emitter *emitter);
-		void update();
-	private:
+    ParticleSys(byte num, Particle particles[], Emitter *emitter);
+    void update();
+private:
 };
 
 #endif /* p_system_h */

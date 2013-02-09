@@ -10,17 +10,16 @@
 #include "Emitter.h"
 #include "Arduino.h"
 
-class SpinEmitter : public Emitter
-{
-    public:
-        byte x;   //left
-        byte y;   //bottom
-        byte r;   //radius
-        signed char rv;  //radial velocity
-        unsigned int counter;
-        SpinEmitter(byte x, byte y, byte r, signed char rv);
-        void emit(Particle * particle);
-    private:
+class SpinEmitter : public Emitter {
+public:
+    byte x;   //left
+    byte y;   //bottom
+    byte r;   //radius
+    signed char rv;  //radial velocity
+    unsigned int counter;
+    SpinEmitter(byte x, byte y, byte r, signed char rv);
+    void emit(Particle * particle);
+private:
 };
 
 #endif /* spin_emitter_h */
