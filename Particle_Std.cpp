@@ -5,7 +5,6 @@
 
 #include "Particle_Std.h"
 
-byte Particle_Std::maxDim = 255;
 signed char Particle_Std::ax = 0;
 signed char Particle_Std::ay = 0;
 
@@ -20,14 +19,14 @@ void Particle_Std::update(void)
     ttl--;
 
     //apply acceleration
-    vx = min(vx+ax, maxDim);
-    vy = min(vy+ay, maxDim);
+    vx = min(vx+ax, PS_MAX_X);
+    vy = min(vy+ay, PS_MAX_Y);
 
     //apply velocity
     unsigned int newX, newY;
     newX = x + vx;
     newY = y + vy;
-    if(ttl == 0 || newX < 0 || newX > maxDim || newY < 0 || newY > maxDim) {
+    if(ttl == 0 || newX < 0 || newX > PS_MAX_X || newY < 0 || newY > PS_MAX_Y) {
         isAlive = false;
     } else {
         x = (byte)newX;

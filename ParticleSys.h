@@ -6,6 +6,7 @@
 #ifndef p_system_h
 #define p_system_h
 
+#include "PsConstants.h"
 #include "Particle_Abstract.h"
 #include "Emitter_Abstract.h"
 

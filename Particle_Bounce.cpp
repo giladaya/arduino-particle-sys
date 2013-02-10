@@ -5,7 +5,6 @@
 
 #include "Particle_Bounce.h"
 
-byte Particle_Bounce::maxDim = 255;
 signed char Particle_Bounce::ax = 0;
 signed char Particle_Bounce::ay = 0;
 
@@ -20,22 +19,22 @@ void Particle_Bounce::update(void)
     ttl--;
 
     //apply acceleration
-    vx = min(vx + ax, maxDim);
-    vy = min(vy + ay, maxDim);
+    vx = min(vx + ax, PS_MAX_X);
+    vy = min(vy + ay, PS_MAX_Y);
 
     //apply velocity
     unsigned int newX, newY;
-    if (y == 0 || y == maxDim) {
+    if (y == 0 || y >= PS_MAX_Y) {
         vy = -1 * vy;
     }
-    if (x == 0 || x == maxDim) {
+    if (x == 0 || x >= PS_MAX_X) {
         vx = -1 * vx;
     }
     if (ttl == 0 || (vx == 0 && vy == 0)) {
         isAlive = false;
     } else {
-        x = min(max(x + vx, 0), maxDim);
-        y = min(max(y + vy, 0), maxDim);
+        x = min(max(x + vx, 0), PS_MAX_X);
+        y = min(max(y + vy, 0), PS_MAX_Y);
     }
 }
 

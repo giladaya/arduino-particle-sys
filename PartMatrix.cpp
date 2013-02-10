@@ -28,33 +28,33 @@ void PartMatrix::render(Particle_Abstract particles[], byte numParticles)
         colorHSV.v = 255;
         HSVtoRGB(&baseRGB, &colorHSV);
 
-        dx = pWidth - (particles[i].x % pWidth);
-        dy = pWidth - (particles[i].y % pWidth);
+        dx = PS_P_RADIUS - (particles[i].x % PS_P_RADIUS);
+        dy = PS_P_RADIUS - (particles[i].y % PS_P_RADIUS);
 
         //bottom left
-        col = particles[i].x / pWidth;
-        row = particles[i].y / pWidth;
-        tempVal = ((unsigned long)dx*dy*particles[i].ttl)>>10; //divide by pSurface == 1024
+        col = particles[i].x / PS_P_RADIUS;
+        row = particles[i].y / PS_P_RADIUS;
+        tempVal = ((unsigned long)dx*dy*particles[i].ttl)>>10; //divide by PS_P_SURFACE == 1024
         addColor(col, row, &baseRGB, tempVal);
 
         //bottom right;
         col++;
-        if (col < resX) {
-            tempVal = ((unsigned long)(pWidth-dx)*dy*particles[i].ttl)>>10; //divide by pSurface == 1024
+        if (col < PS_PIXELS_X) {
+            tempVal = ((unsigned long)(PS_P_RADIUS-dx)*dy*particles[i].ttl)>>10; //divide by PS_P_SURFACE == 1024
             addColor(col, row, &baseRGB, tempVal);
         }
 
         //top right
         row++;
-        if (col < resX && row < resY) {
-            tempVal = ((unsigned long)(pWidth-dx)*(pWidth-dy)*particles[i].ttl)>>10; //divide by pSurface == 1024
+        if (col < PS_PIXELS_X && row < PS_PIXELS_Y) {
+            tempVal = ((unsigned long)(PS_P_RADIUS-dx)*(PS_P_RADIUS-dy)*particles[i].ttl)>>10; //divide by PS_P_SURFACE == 1024
             addColor(col, row, &baseRGB, tempVal);
         }
 
         //top left
         col--;
-        if (row < resY) {
-            tempVal = ((unsigned long)dx*(pWidth-dy)*particles[i].ttl)>>10; //divide by pSurface == 1024
+        if (row < PS_PIXELS_Y) {
+            tempVal = ((unsigned long)dx*(PS_P_RADIUS-dy)*particles[i].ttl)>>10; //divide by PS_P_SURFACE == 1024
             addColor(col, row, &baseRGB, tempVal);
         }
     }
@@ -175,8 +175,8 @@ void PartMatrix::addColor(byte col, byte row, ColorRGB *colorRGB, unsigned long 
 void PartMatrix::reset(void)
 {
     //init all pixels to zero
-    for (byte y=0; y<resY; y++) {
-        for(byte x=0; x<resX; x++) {
+    for (byte y=0; y<PS_PIXELS_Y; y++) {
+        for(byte x=0; x<PS_PIXELS_X; x++) {
             matrix[x][y].r = 0;
             matrix[x][y].g = 0;
             matrix[x][y].b = 0;
@@ -187,8 +187,8 @@ void PartMatrix::reset(void)
 void PartMatrix::fade(void)
 {
     //fade all pixels
-    for (byte y=0; y<resY; y++) {
-        for(byte x=0; x<resX; x++) {
+    for (byte y=0; y<PS_PIXELS_Y; y++) {
+        for(byte x=0; x<PS_PIXELS_X; x++) {
             matrix[x][y].r = matrix[x][y].r>>1;
             matrix[x][y].g = matrix[x][y].g>>1;
             matrix[x][y].b = matrix[x][y].b>>1;

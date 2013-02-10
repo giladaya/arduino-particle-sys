@@ -8,10 +8,9 @@
 byte Emitter_Fire::baseHue = 128; //blues
 byte Emitter_Fire::maxTtl = 128;
 
-Emitter_Fire::Emitter_Fire(byte maxDim)
+Emitter_Fire::Emitter_Fire()
 {
     counter = 0;
-    this->maxDim = maxDim;
     cycleHue = false;
 }
 
@@ -21,7 +20,7 @@ void Emitter_Fire::emit(Particle_Abstract *particle)
     if (cycleHue) baseHue = counter%240;
 
     if (counter % 2 == 0) {
-        particle->x = random(maxDim >> 2, 3 * (maxDim >> 2));
+        particle->x = random(PS_MAX_X >> 2, 3 * (PS_MAX_X >> 2));
         switch (particle->x / 32) {
         case 0:
         case 7:
@@ -42,7 +41,7 @@ void Emitter_Fire::emit(Particle_Abstract *particle)
         }
         particle->hue = baseHue+16;
     } else {
-        particle->x = random(maxDim);
+        particle->x = random(PS_MAX_X);
         switch (particle->x / 32) {
         case 0:
         case 7:

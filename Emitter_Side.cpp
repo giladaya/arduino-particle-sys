@@ -8,11 +8,10 @@
 byte Emitter_Side::baseHue = 128; //blues
 byte Emitter_Side::maxTtl = 128;
 
-Emitter_Side::Emitter_Side(char side, byte maxDim)
+Emitter_Side::Emitter_Side(char side)
 {
     counter = 0;
     this->side = side;
-    this->maxDim = maxDim;
 }
 
 void Emitter_Side::emit(Particle_Abstract * particle)
@@ -21,20 +20,20 @@ void Emitter_Side::emit(Particle_Abstract * particle)
 
     switch(side) {
     case 't':
-        particle->x = random(maxDim);
-        particle->y = maxDim-32;
+        particle->x = random(PS_MAX_X);
+        particle->y = PS_MAX_X-PS_P_RADIUS;
         break;
     case 'r':
-        particle->x = maxDim-32;
-        particle->y = random(maxDim);
+        particle->x = PS_MAX_X-PS_P_RADIUS;
+        particle->y = random(PS_MAX_Y);
         break;
     case 'b':
-        particle->x = random(maxDim);
+        particle->x = random(PS_MAX_X);
         particle->y = 1;
         break;
     case 'l':
         particle->x = 1;
-        particle->y = random(maxDim);
+        particle->y = random(PS_MAX_Y);
         break;
     }
 

@@ -5,6 +5,7 @@
 #ifndef part_matrix_h
 #define part_matrix_h
 
+#include "PsConstants.h"
 #include "Particle_Abstract.h"
 
 //#include "Arduino.h"
@@ -24,12 +25,8 @@ typedef struct {
 
 class PartMatrix {
 public:
-    static const byte resX = 8;
-    static const byte resY = 8;
-    static const byte pWidth = 32;
-    static const byte pSurface = 1024;
     static boolean isOverflow;
-    ColorRGB matrix[resX][resY];
+    ColorRGB matrix[PS_PIXELS_X][PS_PIXELS_Y];
 
     PartMatrix();
     void render(Particle_Abstract particles[], byte numParticles);

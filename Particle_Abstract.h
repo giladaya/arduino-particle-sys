@@ -5,8 +5,8 @@
 
 #ifndef particle_abstract_h
 #define particle_abstract_h
-//#define MAX_DIM 255
 
+#include "PsConstants.h"
 #include "Arduino.h"
 
 class Particle_Abstract {

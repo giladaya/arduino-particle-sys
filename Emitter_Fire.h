@@ -6,6 +6,7 @@
 #ifndef emitter_fire_h
 #define emitter_fire_h
 
+#include "PsConstants.h"
 #include "Emitter_Abstract.h"
 #include "Arduino.h"
 
@@ -15,9 +16,8 @@ public:
     static byte maxTtl;
     unsigned int counter;
     boolean cycleHue;
-    byte maxDim;
 
-    Emitter_Fire(byte maxDim);
+    Emitter_Fire();
     void emit(Particle_Abstract *particle);
 };
 

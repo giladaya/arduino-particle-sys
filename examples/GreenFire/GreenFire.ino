@@ -1,15 +1,13 @@
 #include <Colorduino.h>
+#include "ParticleSys.h"
 #include "Particle_Std.h"
 #include "Emitter_Fire.h"
-#include "ParticleSys.h"
 #include "PartMatrix.h"
 
-const byte maxDim = 255;
 const byte numParticles = 90;
-boolean pulseOn = false;
 
 Particle_Std particles[numParticles];
-Emitter_Fire emitter(maxDim);
+Emitter_Fire emitterE;
 ParticleSys pSys(numParticles, particles, &emitter);
 PartMatrix pMatrix;
 

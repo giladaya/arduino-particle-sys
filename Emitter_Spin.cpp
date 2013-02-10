@@ -18,7 +18,6 @@ void Emitter_Spin::emit(Particle_Abstract * particle)
 {
 //    static char vx = 7;
 //    static char vy = 3;
-//    static byte maxDim = 255;
     float radAngle;
 
     counter++;
@@ -39,13 +38,4 @@ void Emitter_Spin::emit(Particle_Abstract * particle)
     particle->ttl = random(20,100);
     particle->hue = counter%255;
     particle->isAlive = true;
-
-//    x = min(max(x+vx, 0), maxDim);
-//    y = min(max(y+vy, 0), maxDim);
-//    if (y == 0 || y == maxDim){
-//        vy = -1*vy;
-//    }
-//    if (x == 0 || x == maxDim){
-//        vx = -1*vx;
-//    }
 }

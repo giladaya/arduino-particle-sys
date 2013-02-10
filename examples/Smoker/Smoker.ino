@@ -1,10 +1,9 @@
 #include <Colorduino.h>
+#include "ParticleSys.h"
 #include "Particle_Bounce.h"
 #include "Emitter_Fountain.h"
-#include "ParticleSys.h"
 #include "PartMatrix.h"
 
-const byte maxDim = 255;
 const byte numParticles = 40;
 boolean pulseOn = false;
 
