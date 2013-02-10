@@ -1,11 +1,11 @@
 /*
- * SpinEmitter.cpp - a spinning emitter
+ * Emitter_Spin.cpp - a spinning emitter
  * Release into public domain.
  */
 
-#include "SpinEmitter.h"
+#include "Emitter_Spin.h"
 
-SpinEmitter::SpinEmitter(byte x, byte y, byte r, signed char rv)
+Emitter_Spin::Emitter_Spin(byte x, byte y, byte r, signed char rv)
 {
     this->x = x;
     this->y = y;
@@ -14,7 +14,7 @@ SpinEmitter::SpinEmitter(byte x, byte y, byte r, signed char rv)
     counter = 0;
 }
 
-void SpinEmitter::emit(Particle * particle)
+void Emitter_Spin::emit(Particle_Abstract * particle)
 {
 //    static char vx = 7;
 //    static char vy = 3;

@@ -1,14 +1,14 @@
 #include <Colorduino.h>
-#include "BounceParticle.h"
-#include "SpinEmitter.h"
+#include "Particle_Bounce.h"
+#include "Emitter_Spin.h"
 #include "ParticleSys.h"
 #include "PartMatrix.h"
 
 const byte maxDim = 255;
 const byte numParticles = 40;
 
-BounceParticle particles[numParticles];
-SpinEmitter emitter(112, 112, 4, 5);
+Particle_Bounce particles[numParticles];
+Emitter_Spin emitter(112, 112, 4, 5);
 ParticleSys pSys(numParticles, particles, &emitter);
 PartMatrix pMatrix;
 

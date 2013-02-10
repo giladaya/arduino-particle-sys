@@ -10,7 +10,7 @@ PartMatrix::PartMatrix()
 {
 }
 
-void PartMatrix::render(Particle particles[], byte numParticles)
+void PartMatrix::render(Particle_Abstract particles[], byte numParticles)
 {
     byte row, col, dx, dy;
     unsigned long tempVal;

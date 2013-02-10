@@ -1,23 +1,23 @@
 /*
- * AttractorParticle.h - standard particle
+ * Particle_Attractor.h - standard particle
  * Release into public domain.
  */
 
-#ifndef attractor_particle_h
-#define attractor_particle_h
+#ifndef particle_attractor_h
+#define particle_attractor_h
 
-#include "Particle.h"
+#include "Particle_Abstract.h"
 
-class AttractorParticle : public Particle {
+class Particle_Attractor : public Particle_Abstract {
 public:
     static byte maxDim;
     static byte ax; //horizontal attractor position
     static byte ay; //vertical attractor position
     static signed char af; //attractor force
 
-    AttractorParticle();
+    Particle_Attractor();
     void update(void);
 private:
 };
 
-#endif /* attractor_particle_h */
+#endif /* particle_attractor_h */

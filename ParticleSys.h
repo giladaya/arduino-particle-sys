@@ -6,8 +6,8 @@
 #ifndef p_system_h
 #define p_system_h
 
-#include "Particle.h"
-#include "Emitter.h"
+#include "Particle_Abstract.h"
+#include "Emitter_Abstract.h"
 
 
 //#include "Arduino.h"
@@ -15,10 +15,10 @@
 class ParticleSys {
 public:
     byte num;
-    Particle *particles;
-    Emitter *emitter;
+    Particle_Abstract *particles;
+    Emitter_Abstract *emitter;
 
-    ParticleSys(byte num, Particle particles[], Emitter *emitter);
+    ParticleSys(byte num, Particle_Abstract particles[], Emitter_Abstract *emitter);
     void update();
 private:
 };

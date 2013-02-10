@@ -1,21 +1,21 @@
 /*
- * FireEmitter.cpp - emit particles from one side
+ * Emitter_Fire.cpp - emit particles from one side
  * Release into public domain.
  */
 
-#include "FireEmitter.h"
+#include "Emitter_Fire.h"
 
-byte FireEmitter::baseHue = 128; //blues
-byte FireEmitter::maxTtl = 128;
+byte Emitter_Fire::baseHue = 128; //blues
+byte Emitter_Fire::maxTtl = 128;
 
-FireEmitter::FireEmitter(byte maxDim)
+Emitter_Fire::Emitter_Fire(byte maxDim)
 {
     counter = 0;
     this->maxDim = maxDim;
     cycleHue = false;
 }
 
-void FireEmitter::emit(Particle *particle)
+void Emitter_Fire::emit(Particle_Abstract *particle)
 {
     counter++;
     if (cycleHue) baseHue = counter%240;

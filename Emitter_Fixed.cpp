@@ -1,11 +1,11 @@
 /*
- * FixedEmitter.cpp - emit a particle with the same parameters each time
+ * Emitter_Fixed.cpp - emit a particle with the same parameters each time
  * Release into public domain.
  */
 
-#include "FixedEmitter.h"
+#include "Emitter_Fixed.h"
 
-FixedEmitter::FixedEmitter(byte x, byte y, signed char vx, signed char vy, byte ttl)
+Emitter_Fixed::Emitter_Fixed(byte x, byte y, signed char vx, signed char vy, byte ttl)
 {
     counter = 0;
     this->x = x;
@@ -15,7 +15,7 @@ FixedEmitter::FixedEmitter(byte x, byte y, signed char vx, signed char vy, byte 
     this->ttl = ttl;
 }
 
-void FixedEmitter::emit(Particle * particle)
+void Emitter_Fixed::emit(Particle_Abstract * particle)
 {
     counter++;
 

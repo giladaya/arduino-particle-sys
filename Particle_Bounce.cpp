@@ -3,18 +3,18 @@
  * Release into public domain.
  */
 
-#include "BounceParticle.h"
+#include "Particle_Bounce.h"
 
-byte BounceParticle::maxDim = 255;
-signed char BounceParticle::ax = 0;
-signed char BounceParticle::ay = 0;
+byte Particle_Bounce::maxDim = 255;
+signed char Particle_Bounce::ax = 0;
+signed char Particle_Bounce::ay = 0;
 
-BounceParticle::BounceParticle()
+Particle_Bounce::Particle_Bounce()
 {
     isAlive = false;
 }
 
-void BounceParticle::update(void)
+void Particle_Bounce::update(void)
 {
     //age
     ttl--;

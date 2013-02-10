@@ -1,21 +1,21 @@
 /*
- * AttractorParticle.cpp - attractor particle
+ * Particle_Attractor.cpp - attractor particle
  * Release into public domain.
  */
 
-#include "AttractorParticle.h"
+#include "Particle_Attractor.h"
 
-byte AttractorParticle::maxDim = 255;
-byte AttractorParticle::ax = 0;
-byte AttractorParticle::ay = 0;
-signed char AttractorParticle::af = 0;
+byte Particle_Attractor::maxDim = 255;
+byte Particle_Attractor::ax = 0;
+byte Particle_Attractor::ay = 0;
+signed char Particle_Attractor::af = 0;
 
-AttractorParticle::AttractorParticle()
+Particle_Attractor::Particle_Attractor()
 {
     isAlive = false;
 }
 
-void AttractorParticle::update(void)
+void Particle_Attractor::update(void)
 {
     int dx, dy;
     signed char acx, acy;

@@ -1,22 +1,22 @@
 /*
- * StdParticle.h - standard particle
+ * Particle_Std.h - standard particle
  * Release into public domain.
  */
 
-#ifndef std_particle_h
-#define std_particle_h
+#ifndef particle_std_h
+#define particle_std_h
 
-#include "Particle.h"
+#include "Particle_Abstract.h"
 
-class StdParticle : public Particle {
+class Particle_Std : public Particle_Abstract {
 public:
     static byte maxDim;
     static signed char ax; //horizontal acceleration
     static signed char ay; //vertical acceleration
 
-    StdParticle();
+    Particle_Std();
     void update(void);
 private:
 };
 
-#endif /* std_particle_h */
+#endif /* particle_std_h */

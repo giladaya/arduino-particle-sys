@@ -1,6 +1,6 @@
 #include <Colorduino.h>
-#include "BounceParticle.h"
-#include "SpinEmitter.h"
+#include "Particle_Bounce.h"
+#include "Emitter_Spin.h"
 //#include "RainEmitter.h"
 #include "ParticleSys.h"
 #include "PartMatrix.h"
@@ -10,8 +10,8 @@ const byte maxDim = 255;
 const byte numParticles = 70;
 boolean pulseOn = false;
 
-BounceParticle particles[numParticles];
-SpinEmitter emitter(112, 112, 4, 4);
+Particle_Bounce particles[numParticles];
+Emitter_Spin emitter(112, 112, 4, 4);
 //RainEmitter emitter;
 ParticleSys pSys(numParticles, particles, &emitter);
 PartMatrix pMatrix;

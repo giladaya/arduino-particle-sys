@@ -4,7 +4,7 @@
  */
 #include "ParticleSys.h"
 
-ParticleSys::ParticleSys(byte num, Particle particles[], Emitter *emitter)
+ParticleSys::ParticleSys(byte num, Particle_Abstract particles[], Emitter_Abstract *emitter)
 {
     this->num = num;
     this->particles = particles;

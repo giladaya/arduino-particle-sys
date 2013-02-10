@@ -1,11 +1,11 @@
 /*
- * FountainEmitter.cpp - a fountain of particles
+ * Emitter_Fountain.cpp - a fountain of particles
  * Release into public domain.
  */
 
-#include "FountainEmitter.h"
+#include "Emitter_Fountain.h"
 
-FountainEmitter::FountainEmitter(signed char vx, signed char vy, byte var, Particle *source)
+Emitter_Fountain::Emitter_Fountain(signed char vx, signed char vy, byte var, Particle_Abstract *source)
 {
     this->vx = vx;
     this->vy = vy;
@@ -15,7 +15,7 @@ FountainEmitter::FountainEmitter(signed char vx, signed char vy, byte var, Parti
     counter = 0;
 }
 
-void FountainEmitter::emit(Particle * particle)
+void Emitter_Fountain::emit(Particle_Abstract * particle)
 {
     counter++;
     source->update();

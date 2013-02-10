@@ -5,7 +5,7 @@
 #ifndef part_matrix_h
 #define part_matrix_h
 
-#include "Particle.h"
+#include "Particle_Abstract.h"
 
 //#include "Arduino.h"
 
@@ -32,7 +32,7 @@ public:
     ColorRGB matrix[resX][resY];
 
     PartMatrix();
-    void render(Particle particles[], byte numParticles);
+    void render(Particle_Abstract particles[], byte numParticles);
     void reset(void);
     void fade(void);
     static void HSVtoRGB(ColorRGB *colorRGB, ColorHSV *colorHSV);

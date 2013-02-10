@@ -3,18 +3,18 @@
  * Release into public domain.
  */
 
-#include "StdParticle.h"
+#include "Particle_Std.h"
 
-byte StdParticle::maxDim = 255;
-signed char StdParticle::ax = 0;
-signed char StdParticle::ay = 0;
+byte Particle_Std::maxDim = 255;
+signed char Particle_Std::ax = 0;
+signed char Particle_Std::ay = 0;
 
-StdParticle::StdParticle()
+Particle_Std::Particle_Std()
 {
     isAlive = false;
 }
 
-void StdParticle::update(void)
+void Particle_Std::update(void)
 {
     //age
     ttl--;

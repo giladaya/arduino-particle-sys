@@ -3,13 +3,13 @@
  * Release into public domain.
  */
 
-#ifndef particle_h
-#define particle_h
+#ifndef particle_abstract_h
+#define particle_abstract_h
 //#define MAX_DIM 255
 
 #include "Arduino.h"
 
-class Particle {
+class Particle_Abstract {
 public:
     byte x;   //left
     byte y;   //bottom
@@ -22,4 +22,4 @@ public:
     virtual void update(void);
 };
 
-#endif /* particle_h */
+#endif /* particle_abstract_h */

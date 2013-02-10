@@ -1,8 +1,8 @@
 #include <Colorduino.h>
-#include "StdParticle.h"
-#include "BounceParticle.h"
-//#include "FountainEmitter.h"
-#include "FountainEmitter.h"
+#include "Particle_Std.h"
+#include "Particle_Bounce.h"
+//#include "Emitter_Fountain.h"
+#include "Emitter_Fountain.h"
 #include "ParticleSys.h"
 #include "PartMatrix.h"
 
@@ -11,9 +11,9 @@ const byte maxDim = 255;
 const byte numParticles = 40;
 boolean pulseOn = false;
 
-BounceParticle particles[numParticles];
-BounceParticle source;
-FountainEmitter emitter(0, 5, 2, &source);
+Particle_Bounce particles[numParticles];
+Particle_Bounce source;
+Emitter_Fountain emitter(0, 5, 2, &source);
 ParticleSys pSys(numParticles, particles, &emitter);
 PartMatrix pMatrix;
 
@@ -56,7 +56,7 @@ void setup()
   source.vy = 3;
   source.x = 1;
   source.y = 1;
-  //StdParticle::ay = 1;
+  //Particle_Std::ay = 1;
   //PartMatrix::isOverflow = false;
  
   //init all pixels to zero

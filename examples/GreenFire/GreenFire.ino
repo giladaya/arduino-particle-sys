@@ -1,6 +1,6 @@
 #include <Colorduino.h>
-#include "StdParticle.h"
-#include "FireEmitter.h"
+#include "Particle_Std.h"
+#include "Emitter_Fire.h"
 #include "ParticleSys.h"
 #include "PartMatrix.h"
 
@@ -9,8 +9,8 @@ const byte maxDim = 255;
 const byte numParticles = 90;
 boolean pulseOn = false;
 
-StdParticle particles[numParticles];
-FireEmitter emitter(maxDim);
+Particle_Std particles[numParticles];
+Emitter_Fire emitter(maxDim);
 ParticleSys pSys(numParticles, particles, &emitter);
 PartMatrix pMatrix;
 
@@ -52,10 +52,10 @@ void setup()
 
     randomSeed(analogRead(0));
 
-    StdParticle::ay = 1;
-    FireEmitter::baseHue = 75;  //green
-    //FireEmitter::baseHue = 156; //blue
-    FireEmitter::maxTtl = 96;
+    Particle_Std::ay = 1;
+    Emitter_Fire::baseHue = 75;  //green
+    //Emitter_Fire::baseHue = 156; //blue
+    Emitter_Fire::maxTtl = 96;
     PartMatrix::isOverflow = false;
 
     //init all pixels to zero

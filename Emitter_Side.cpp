@@ -1,21 +1,21 @@
 /*
- * SideEmitter.cpp - emit particles from one side
+ * Emitter_Side.cpp - emit particles from one side
  * Release into public domain.
  */
 
-#include "SideEmitter.h"
+#include "Emitter_Side.h"
 
-byte SideEmitter::baseHue = 128; //blues
-byte SideEmitter::maxTtl = 128;
+byte Emitter_Side::baseHue = 128; //blues
+byte Emitter_Side::maxTtl = 128;
 
-SideEmitter::SideEmitter(char side, byte maxDim)
+Emitter_Side::Emitter_Side(char side, byte maxDim)
 {
     counter = 0;
     this->side = side;
     this->maxDim = maxDim;
 }
 
-void SideEmitter::emit(Particle * particle)
+void Emitter_Side::emit(Particle_Abstract * particle)
 {
     counter++;
 
