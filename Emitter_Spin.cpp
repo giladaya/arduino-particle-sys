@@ -5,6 +5,8 @@
 
 #include "Emitter_Spin.h"
 
+ byte Emitter_Spin::perCycle = 10;
+
 Emitter_Spin::Emitter_Spin(byte x, byte y, byte r, signed char rv)
 {
     this->x = x;
@@ -12,6 +14,12 @@ Emitter_Spin::Emitter_Spin(byte x, byte y, byte r, signed char rv)
     this->r = r;
     this->rv = rv;
     counter = 0;
+    cycleRemaining = perCycle;
+}
+
+void Emitter_Spin::update()
+{
+    cycleRemaining = perCycle;
 }
 
 void Emitter_Spin::emit(Particle_Abstract * particle)

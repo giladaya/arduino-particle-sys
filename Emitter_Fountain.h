@@ -19,6 +19,7 @@ public:
     unsigned int counter;
     Emitter_Fountain(signed char vx, signed char vy, byte var, Particle_Abstract *source);
     void emit(Particle_Abstract * particle);
+    void update();
 private:
     byte _hVar;
 };

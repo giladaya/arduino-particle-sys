@@ -15,6 +15,11 @@ Emitter_Fountain::Emitter_Fountain(signed char vx, signed char vy, byte var, Par
     counter = 0;
 }
 
+void Emitter_Fountain::update()
+{
+    source->update();
+}
+
 void Emitter_Fountain::emit(Particle_Abstract * particle)
 {
     counter++;

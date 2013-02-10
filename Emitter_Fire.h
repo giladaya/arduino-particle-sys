@@ -19,6 +19,10 @@ public:
 
     Emitter_Fire();
     void emit(Particle_Abstract *particle);
+    void update();
+private:
+    static byte perCycle;
+    byte cycleRemaining;
 };
 
 #endif /* emitter_fire_h */

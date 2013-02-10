@@ -7,15 +7,25 @@
 
 byte Emitter_Fire::baseHue = 128; //blues
 byte Emitter_Fire::maxTtl = 128;
+byte Emitter_Fire::perCycle = 10;
 
 Emitter_Fire::Emitter_Fire()
 {
     counter = 0;
     cycleHue = false;
+    cycleRemaining = perCycle;
+}
+
+void Emitter_Fire::update()
+{
+    cycleRemaining = perCycle;
 }
 
 void Emitter_Fire::emit(Particle_Abstract *particle)
 {
+    if (perCycle> 0 && cycleRemaining == 0) return;
+    cycleRemaining--;
+
     counter++;
     if (cycleHue) baseHue = counter%240;
 
