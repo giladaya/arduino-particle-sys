@@ -17,7 +17,6 @@ public:
 
     Particle_Attractor();
     void update(void);
-private:
 };
 
 #endif /* particle_attractor_h */

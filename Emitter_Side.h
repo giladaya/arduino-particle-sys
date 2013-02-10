@@ -19,7 +19,6 @@ public:
 
     Emitter_Side(char side, byte maxDim);
     void emit(Particle_Abstract * particle);
-private:
 };
 
 #endif /* emitter_side_h */

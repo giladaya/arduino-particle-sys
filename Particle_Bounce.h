@@ -16,7 +16,6 @@ public:
 
     Particle_Bounce();
     void update(void);
-private:
 };
 
 #endif /* particle_bounce_h */

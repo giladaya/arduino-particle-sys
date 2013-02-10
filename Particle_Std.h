@@ -16,7 +16,6 @@ public:
 
     Particle_Std();
     void update(void);
-private:
 };
 
 #endif /* particle_std_h */

@@ -1,12 +1,9 @@
 #include <Colorduino.h>
-#include "Particle_Std.h"
 #include "Particle_Bounce.h"
-//#include "Emitter_Fountain.h"
 #include "Emitter_Fountain.h"
 #include "ParticleSys.h"
 #include "PartMatrix.h"
 
-//#define DEBUG 1
 const byte maxDim = 255;
 const byte numParticles = 40;
 boolean pulseOn = false;
@@ -33,13 +30,6 @@ void drawMatrix(){
 
 void setup()
 {
-#ifdef DEBUG    
-  // start serial port at 9600 bps:
-  Serial.begin(9600);
-  Serial.print("start. width:");
-  Serial.println(pWidth);
-#endif  
-  
   Colorduino.Init(); // initialize the board
   
   // compensate for relative intensity differences in R/G/B brightness
@@ -61,22 +51,12 @@ void setup()
  
   //init all pixels to zero
   pMatrix.reset();
- 
-  Colorduino.FlipPage(); // swap screen buffers to show it
 }
 
 void loop()
 {
     pSys.update();
     drawMatrix();
-//    if (pulseOn){
-//        Colorduino.SetPixel(7, 7, 200, 0, 0);
-//    }
-//    else {
-//        Colorduino.SetPixel(7, 7, 0, 0, 0);
-//    }
-//    pulseOn = ! pulseOn;
-    
     Colorduino.FlipPage();
     delay(20);
 }

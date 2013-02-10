@@ -4,7 +4,6 @@
 #include "ParticleSys.h"
 #include "PartMatrix.h"
 
-//#define DEBUG 1
 const byte maxDim = 255;
 const byte numParticles = 90;
 boolean pulseOn = false;
@@ -60,8 +59,6 @@ void setup()
 
     //init all pixels to zero
     pMatrix.reset();
-
-    Colorduino.FlipPage(); // swap screen buffers to show it
 }
 
 void loop()

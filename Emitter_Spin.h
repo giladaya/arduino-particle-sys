@@ -19,7 +19,6 @@ public:
     unsigned int counter;
     Emitter_Spin(byte x, byte y, byte r, signed char rv);
     void emit(Particle_Abstract * particle);
-private:
 };
 
 #endif /* emitter_spin_h */

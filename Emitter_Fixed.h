@@ -20,7 +20,6 @@ public:
 
     Emitter_Fixed(byte x, byte y, signed char vx, signed char vy, byte ttl);
     void emit(Particle_Abstract * particle);
-private:
 };
 
 #endif /* emitter_fixed_h */

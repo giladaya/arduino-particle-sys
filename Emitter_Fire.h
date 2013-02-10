@@ -19,7 +19,6 @@ public:
 
     Emitter_Fire(byte maxDim);
     void emit(Particle_Abstract *particle);
-private:
 };
 
 #endif /* emitter_fire_h */

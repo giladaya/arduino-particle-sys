@@ -20,7 +20,6 @@ public:
 
     ParticleSys(byte num, Particle_Abstract particles[], Emitter_Abstract *emitter);
     void update();
-private:
 };
 
 #endif /* p_system_h */
