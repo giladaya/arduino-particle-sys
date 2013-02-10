@@ -13,6 +13,7 @@ ParticleSys::ParticleSys(byte num, Particle_Abstract particles[], Emitter_Abstra
 
 void ParticleSys::update()
 {
+    emitter->update();
     for(int i = 0; i<num; i++) {
         particles[i].update();
         if (!particles[i].isAlive) {

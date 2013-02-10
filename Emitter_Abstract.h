@@ -12,6 +12,7 @@
 class Emitter_Abstract {
 public:
     virtual void emit(Particle_Abstract * particle);
+    virtual void update(){}
 };
 
 #endif /* emitter_abstract_h */
