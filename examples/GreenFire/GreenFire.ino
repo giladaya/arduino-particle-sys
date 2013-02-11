@@ -1,3 +1,12 @@
+/* 
+ * Copyright (C) 2013 Gilad Dayagi.  All rights reserved.
+ * 
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Lesser General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ */
+
 #include <Colorduino.h>
 #include "ParticleSys.h"
 #include "Particle_Std.h"
@@ -7,7 +16,7 @@
 const byte numParticles = 90;
 
 Particle_Std particles[numParticles];
-Emitter_Fire emitterE;
+Emitter_Fire emitter;
 ParticleSys pSys(numParticles, particles, &emitter);
 PartMatrix pMatrix;
 

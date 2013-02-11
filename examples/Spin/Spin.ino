@@ -1,3 +1,20 @@
+/* 
+ * Copyright (C) 2013 Gilad Dayagi.  All rights reserved.
+ * 
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Lesser General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ */
+
+ /*
+  * An example for the Arduino particle system library
+  * Creates a spinning galaxy effect
+  * 
+  * Note: this example uses the colorduino library becuse that is what I had, 
+  * but any device that supports setting a pixel to an RGB value can be used
+  */
+
 #include <Colorduino.h>
 #include "ParticleSys.h"
 #include "Particle_Bounce.h"
