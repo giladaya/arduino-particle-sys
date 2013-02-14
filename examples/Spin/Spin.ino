@@ -21,10 +21,10 @@
 #include "Emitter_Spin.h"
 #include "PartMatrix.h"
 
-const byte numParticles = 40;
+const byte numParticles = 60;
 
 Particle_Bounce particles[numParticles];
-Emitter_Spin emitter(112, 112, 4, 5);
+Emitter_Spin emitter(112, 112, 5, 7);
 ParticleSys pSys(numParticles, particles, &emitter);
 PartMatrix pMatrix;
 
@@ -59,6 +59,8 @@ void setup()
   pMatrix.reset();
  
   Colorduino.FlipPage(); // swap screen buffers to show it
+  
+  emitter.oscilate = true;
 }
 
 void loop()
