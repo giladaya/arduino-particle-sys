@@ -7,6 +7,14 @@
  * (at your option) any later version.
  */
 
+ /*
+  * An example for the Arduino particle system library
+  * Creates a green flame effect.
+  * 
+  * Note: this example uses the colorduino library becuse that is what I had, 
+  * but any device that supports setting a pixel to an RGB value can be used
+  */
+
 #include <Colorduino.h>
 #include "ParticleSys.h"
 #include "Particle_Std.h"
