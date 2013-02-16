@@ -47,13 +47,6 @@ void drawMatrix()
 
 void setup()
 {
-#ifdef DEBUG
-    // start serial port at 9600 bps:
-    Serial.begin(9600);
-    Serial.print("start. width:");
-    Serial.println(pWidth);
-#endif
-
     Colorduino.Init(); // initialize the board
 
     // compensate for relative intensity differences in R/G/B brightness
@@ -67,6 +60,7 @@ void setup()
     randomSeed(analogRead(0));
 
     Particle_Std::ay = 1;
+    ParticleSys::perCycle = 10;
     Emitter_Fire::baseHue = 75;  //green
     //Emitter_Fire::baseHue = 156; //blue
     Emitter_Fire::maxTtl = 96;
