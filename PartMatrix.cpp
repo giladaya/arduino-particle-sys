@@ -170,7 +170,7 @@ void PartMatrix::addColor(byte col, byte row, ColorRGB *colorRGB, unsigned long 
     }
 
     //BLUE
-    if (colorRGB->g > 0) {
+    if (colorRGB->b > 0) {
         tempVal = matrix[col][row].b + ((value*colorRGB->b)>>8);
         matrix[col][row].b = min(tempVal, 255);
         if (isOverflow && tempVal > 255) {
