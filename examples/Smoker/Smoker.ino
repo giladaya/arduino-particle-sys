@@ -23,12 +23,12 @@
 #include "Emitter_Fountain.h"
 #include "PartMatrix.h"
 
-const byte numParticles = 40;
+const byte numParticles = 70;
 boolean pulseOn = false;
 
 Particle_Std particles[numParticles];
 Particle_Attractor source;
-Emitter_Fountain emitter(0, 5, 2, &source);
+Emitter_Fountain emitter(0, 0, 5, &source);
 ParticleSys pSys(numParticles, particles, &emitter);
 PartMatrix pMatrix;
 
@@ -62,10 +62,14 @@ void setup()
   
   source.vx = 3;
   source.vy = 1;
-  source.x = 10;
-  source.y = 10;
-  //Particle_Std::ay = 1;
+  source.x = random(50)+100;
+  source.y = random(10)+1;
+  Particle_Std::ay = 1;
   //PartMatrix::isOverflow = false;
+  Emitter_Fountain::minLife = 100;
+  Emitter_Fountain::maxLife = 200;
+  //ParticleSys::perCycle = 2;
+  Particle_Attractor::atf = 2;
  
   //init all pixels to zero
   pMatrix.reset();
