@@ -20,11 +20,14 @@
 
 class Emitter_Fountain : public Emitter_Abstract {
 public:
+    static byte minLife;
+    static byte maxLife;
     signed char vx;  //horizontal velocity for emitted particles
     signed char vy;  //vertical velocity for emitted particles
     byte var; //emitted particles velocity variance
     Particle_Abstract *source; //source point
     unsigned int counter;
+
     Emitter_Fountain(signed char vx, signed char vy, byte var, Particle_Abstract *source);
     void emit(Particle_Abstract * particle);
     void update();

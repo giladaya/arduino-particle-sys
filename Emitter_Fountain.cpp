@@ -13,6 +13,9 @@
 
 #include "Emitter_Fountain.h"
 
+byte Emitter_Fountain::minLife = 50;
+byte Emitter_Fountain::maxLife = 250;
+
 Emitter_Fountain::Emitter_Fountain(signed char vx, signed char vy, byte var, Particle_Abstract *source)
 {
     this->vx = vx;
@@ -39,7 +42,7 @@ void Emitter_Fountain::emit(Particle_Abstract * particle)
     particle->vy = vy + random(var)-_hVar;
 
     //particle->ttl = random(20,100);
-    particle->ttl = counter%200+50;
+    particle->ttl = random(minLife, maxLife);
     particle->hue = counter%255;
     particle->isAlive = true;
 }
