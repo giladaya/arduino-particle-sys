@@ -13,8 +13,6 @@
 
 #include "Emitter_Spin.h"
 
-byte Emitter_Spin::perCycle = 1;
-
 Emitter_Spin::Emitter_Spin(byte x, byte y, byte r, signed char rv)
 {
     this->x = x;
@@ -23,15 +21,12 @@ Emitter_Spin::Emitter_Spin(byte x, byte y, byte r, signed char rv)
     this->rv = tempRv = rv;
     oscilate = false;
     counter = 0;
-    cycleRemaining = perCycle;
 }
 
 void Emitter_Spin::update()
 {
     static signed char direction = -1;
     float radAngle;
-    cycleRemaining = perCycle;
-
     counter++;
 
     //calculate velocity vector
@@ -55,9 +50,6 @@ void Emitter_Spin::update()
 
 void Emitter_Spin::emit(Particle_Abstract * particle)
 {
-    if (perCycle> 0 && cycleRemaining == 0) return;
-    cycleRemaining--;
-
     particle->x = this->x;
     particle->y = this->y;
 

@@ -30,8 +30,6 @@ public:
     void emit(Particle_Abstract * particle);
     void update();
 private:
-    static byte perCycle;
-    byte cycleRemaining;
     signed char vx;
     signed char vy;
     signed char tempRv;

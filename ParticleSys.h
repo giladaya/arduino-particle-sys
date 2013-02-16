@@ -23,12 +23,16 @@
 
 class ParticleSys {
 public:
+    static byte perCycle;
     byte num;
     Particle_Abstract *particles;
     Emitter_Abstract *emitter;
 
     ParticleSys(byte num, Particle_Abstract particles[], Emitter_Abstract *emitter);
     void update();
+
+private:
+    byte cycleRemaining;
 };
 
 #endif /* p_system_h */

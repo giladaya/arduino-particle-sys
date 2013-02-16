@@ -13,6 +13,8 @@
 
 #include "ParticleSys.h"
 
+byte ParticleSys::perCycle = 1;
+
 ParticleSys::ParticleSys(byte num, Particle_Abstract particles[], Emitter_Abstract *emitter)
 {
     this->num = num;
@@ -22,11 +24,13 @@ ParticleSys::ParticleSys(byte num, Particle_Abstract particles[], Emitter_Abstra
 
 void ParticleSys::update()
 {
+    cycleRemaining = perCycle;
     emitter->update();
     for(int i = 0; i<num; i++) {
         particles[i].update();
-        if (!particles[i].isAlive) {
+        if (!particles[i].isAlive && cycleRemaining > 0) {
             emitter->emit(&particles[i]);
+            cycleRemaining--;
         }
     }
 }
