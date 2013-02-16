@@ -24,11 +24,9 @@ void Particle_Fixed::update(void)
 {
     //age
     if (ttl < decayFactor) {
-        //ttl = 0;
         isAlive = false;
         return;
     }
     ttl -= decayFactor;
-    // ttl--;
 }
 
