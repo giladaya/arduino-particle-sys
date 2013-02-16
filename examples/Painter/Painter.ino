@@ -63,6 +63,8 @@ void setup()
   source.vy = 1;
   source.x = 10;
   source.y = 10;
+  Emitter_Fountain::minLife = 150;
+  Emitter_Fountain::maxLife = 150;
   //Particle_Std::ay = 1;
   //PartMatrix::isOverflow = false;
  
