@@ -39,8 +39,9 @@ public:
 
     PartMatrix();
     void render(Particle_Abstract particles[], byte numParticles);
-    void reset(void);
-    void fade(void);
+    void reset(void);    //set each pixel to 0
+    void fade(void);     //devide each pixel by half
+    void fadeBy(byte amount); //substract amount from each pixel 
     static void HSVtoRGB(ColorRGB *colorRGB, ColorHSV *colorHSV);
 
 private:

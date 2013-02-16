@@ -205,3 +205,15 @@ void PartMatrix::fade(void)
         }
     }
 }
+
+void PartMatrix::fadeBy(byte amount)
+{
+    //fade all pixels
+    for (byte y=0; y<PS_PIXELS_Y; y++) {
+        for(byte x=0; x<PS_PIXELS_X; x++) {
+            matrix[x][y].r = matrix[x][y].r < amount ? 0 : matrix[x][y].r - amount;
+            matrix[x][y].g = matrix[x][y].g < amount ? 0 : matrix[x][y].g - amount;
+            matrix[x][y].b = matrix[x][y].b < amount ? 0 : matrix[x][y].b - amount;
+        }
+    }
+}
