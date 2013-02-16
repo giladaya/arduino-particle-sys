@@ -8,7 +8,7 @@
  */
 
 /*
- * particle.cpp - standard particle, dies when out of bounds
+ * Particle_Std.cpp - standard particle, dies when out of bounds
  */
 
 #include "Particle_Std.h"
