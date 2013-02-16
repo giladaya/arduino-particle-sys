@@ -17,15 +17,17 @@
 
 #include <Colorduino.h>
 #include "ParticleSys.h"
+#include "Particle_Std.h"
 #include "Particle_Bounce.h"
+#include "Particle_Attractor.h"
 #include "Emitter_Fountain.h"
 #include "PartMatrix.h"
 
 const byte numParticles = 40;
 boolean pulseOn = false;
 
-Particle_Bounce particles[numParticles];
-Particle_Bounce source;
+Particle_Std particles[numParticles];
+Particle_Attractor source;
 Emitter_Fountain emitter(0, 5, 2, &source);
 ParticleSys pSys(numParticles, particles, &emitter);
 PartMatrix pMatrix;
@@ -58,10 +60,10 @@ void setup()
   
   randomSeed(analogRead(0));
   
-  source.vx = 15;
-  source.vy = 3;
-  source.x = 1;
-  source.y = 1;
+  source.vx = 3;
+  source.vy = 1;
+  source.x = 10;
+  source.y = 10;
   //Particle_Std::ay = 1;
   //PartMatrix::isOverflow = false;
  
@@ -74,5 +76,5 @@ void loop()
     pSys.update();
     drawMatrix();
     Colorduino.FlipPage();
-    delay(20);
+    delay(50);
 }
