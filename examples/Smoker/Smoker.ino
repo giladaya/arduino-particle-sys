@@ -18,7 +18,6 @@
 #include <Colorduino.h>
 #include "ParticleSys.h"
 #include "Particle_Std.h"
-#include "Particle_Bounce.h"
 #include "Particle_Attractor.h"
 #include "Emitter_Fountain.h"
 #include "PartMatrix.h"
