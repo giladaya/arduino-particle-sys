@@ -9,8 +9,8 @@ Clone the repo into the arduino libraries directory
 
 Hardware
 --------
-A [Colorduino](http://imall.iteadstudio.com/development-platform/im120410004.html) or a [Rainbowduino](http://www.seeedstudio.com/depot/rainbowduino-led-driver-platform-plug-and-shine-p-371.html), mounted in a box behind tracing-paper screen.
-Paint the inside of the box in black for some added contrast.
+A [Colorduino](http://imall.iteadstudio.com/development-platform/im120410004.html) or a [Rainbowduino](http://www.seeedstudio.com/depot/rainbowduino-led-driver-platform-plug-and-shine-p-371.html), mounted in a box behind tracing-paper screen.  
+Paint the inside of the box in black for some added contrast.  
 ![Hardware setup](http://giladlabs.files.wordpress.com/2013/02/hardware-setup1.jpg)
 
 
