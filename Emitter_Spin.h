@@ -20,6 +20,7 @@
 
 class Emitter_Spin : public Emitter_Abstract {
 public:
+    static byte maxTtl;
     byte x;   //left
     byte y;   //bottom
     byte r;   //radius

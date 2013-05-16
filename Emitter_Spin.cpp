@@ -13,6 +13,8 @@
 
 #include "Emitter_Spin.h"
 
+byte Emitter_Spin::maxTtl = 100;
+
 Emitter_Spin::Emitter_Spin(byte x, byte y, byte r, signed char rv)
 {
     this->x = x;
@@ -56,7 +58,7 @@ void Emitter_Spin::emit(Particle_Abstract * particle)
     particle->vx = vx;
     particle->vy = vy;
 
-    particle->ttl = random(20,100);
+    particle->ttl = random(20, maxTtl);
     particle->hue = (counter>>1)%255;
     particle->isAlive = true;
 }
