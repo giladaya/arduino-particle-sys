@@ -10,12 +10,17 @@
  /*
   * An example for the Arduino particle system library
   * Creates a spinning galaxy effect
-  * 
-  * Note: this example uses the colorduino library becuse that is what I had, 
-  * but any device that supports setting a pixel to an RGB value can be used
   */
 
+//'r' for rainbowduino, 'c' for colorduino
+#define BOARD 'r'
+
+#if BOARD == 'c'
 #include <Colorduino.h>
+#else
+#include <Rainbowduino.h>
+#endif
+
 #include "ParticleSys.h"
 #include "Particle_Bounce.h"
 #include "Emitter_Spin.h"
@@ -35,15 +40,20 @@ void drawMatrix(){
     pMatrix.fade();
     pMatrix.render(particles, numParticles);
     //update the actual LED matrix
-    for (byte y=0;y<ColorduinoScreenHeight;y++) {
-        for(byte x=0;x<ColorduinoScreenWidth;x++) {
+    for (byte y=0;y<PS_PIXELS_Y;y++) {
+        for(byte x=0;x<PS_PIXELS_X;x++) {
+#if BOARD == 'c'
             Colorduino.SetPixel(x, y, pMatrix.matrix[x][y].r, pMatrix.matrix[x][y].g, pMatrix.matrix[x][y].b);
+#else
+            Rb.setPixelXY(x, y, pMatrix.matrix[x][y].r, pMatrix.matrix[x][y].g, pMatrix.matrix[x][y].b);
+#endif
         }
     }
 }
 
 void setup()
 {
+#if BOARD == 'c'    
   Colorduino.Init(); // initialize the board
   
   // compensate for relative intensity differences in R/G/B brightness
@@ -53,12 +63,14 @@ void setup()
   // whiteBalVal[2]=blue
   byte whiteBalVal[3] = {36,63,7}; // for LEDSEE 6x6cm round matrix
   Colorduino.SetWhiteBal(whiteBalVal);
-  
+#else
+    Rb.init();
+#endif
+
   randomSeed(analogRead(0));
   
   pMatrix.reset();
- 
-  Colorduino.FlipPage(); // swap screen buffers to show it
+  PartMatrix::isOverflow = true;
   
   emitter.oscilate = true;
 }
@@ -67,6 +79,9 @@ void loop()
 {
     pSys.update();
     drawMatrix();
+#if BOARD == 'c'    
     Colorduino.FlipPage();
-    delay(20);
+#endif 
+    delay(30);
 }
+
